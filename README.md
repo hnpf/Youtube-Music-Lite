@@ -1,7 +1,7 @@
 # YouTube Music Lite
 
 Chromshitum based, portable launcher for YouTube Music using Chromshitum. this opens ytm in a window with built in adblocking via uBlock Origin. - Doesnt work correctly for Windows.
-
+-Note, This doesnt INCLUDE /oss/ and the files inside of it. due to copyright and other reasons, you should use this as a template for yourself!
 ## features
 
 - **portable Chromshitum build**: Uses a portable version of Chromshitum for Windows and Linux.
@@ -71,5 +71,6 @@ feel free to fork and submit pull requests. try to make sure changes are compati
 this project is open-source. Check the license file for details.
 
 ## disclaimer
+
 
 this tool is for personal use. respect and follow youtube's terms of service.
