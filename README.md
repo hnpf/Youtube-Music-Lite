@@ -69,10 +69,11 @@ feel free to fork and submit pull requests. try to make sure changes are compati
 
 ## license
 
-this project is open-source. Check the license file for details.
+this project is open-source.
 
 ## disclaimer
 
 
 this tool is for personal use. respect and follow youtube's terms of service.
+
 
