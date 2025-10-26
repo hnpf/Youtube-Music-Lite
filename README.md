@@ -1,49 +1,75 @@
-YT Music Lite - Unofficial (Python)
+# YouTube Music Lite
 
-This is a simple Python application that allows you to browse and stream music from YouTube Music using PyQt5 and a custom web engine. It's lightweight and provides a convenient interface to access YouTube Music without the need for a full web browser.
-Features
+Chromshitum based, portable launcher for YouTube Music using Chromshitum. this opens ytm in a window with built in adblocking via uBlock Origin. - Doesnt work correctly for Windows.
 
-    Browse YouTube Music
+## features
 
-    Hide login elements from the interface
+- **portable Chromshitum build**: Uses a portable version of Chromshitum for Windows and Linux.
+- **adblocking**: uses uBlock Origin.
+- **profiles**: uses separate profiles for the app to avoid interfering with your default browser.
+- **cross-platform**: windows and linux support.
 
-    Open login requests in your system's default web browser
+## requirements
 
-    Customizable profile for storing session data
+- **python 3**: needed to run the launcher script.
+- **portable Chromshitum**: included in the `oss/` directory for windows (`WindowsChromium`) and linux (`LinuxChromium`).
 
-    Basic web view UI
+## install
 
-Requirements
+### for windows
 
-    Python 3.x
+1. run `install.bat`.
+2. it will:
+   - copy all files to `%APPDATA%\YTM-Music`.
+   - and create a desktop shortcut named `YTM-Music.lnk`.
+3. optional, simply dont install and run python script directly. best route is portable.
 
-    PyQt5 for the GUI and web engine interaction
+### linux
 
-    re for regular expressions (built-in Python module)
+1. python 3 is installed.
+2. open `python3 ym_music.py` from the project directory.
+3. the script will handle copying uBlock Origin to the profile if needed.
 
-Install the required dependencies:
+## using
 
-pip install PyQt5 --thats literally everything
+- **launching**: simply run the script to open YouTube Music in a Chromshitum window.
+- **profiles**: user data is stored in `~/.ytm-lite-profiles/music_youtube_com` to keep it separate from your main browser.
 
-Usage
+### commandline options
 
-The app will open a PyQt5 window with the YouTube Music site loaded. The UI will hide login elements, and any login requests will open in your default browser.
-Customize
+script can be customized by modifying `ym_music.py`:
 
-    You can change the url variable to load a different web page if needed. Hell, even make your own web app with it, idc 
+- `url`: change the default URL (default: `https://music.youtube.com`). basically this can also work for any other sites.
+- `debug`: enable/disable debug logging (default: `True`).
+- `persist`: whether to persist the profile (default: `True`).
 
-    Modify the app's user agent or cookies handling by editing the profile.setHttpUserAgent and profile.setPersistentCookiesPolicy settings in the code <3
+## remove
 
-How It Works
+### for windows
 
-    The app uses QWebEngineView from PyQt5 to load the YouTube Music website.
+1. simply `uninstall.bat`.
+2. it will remove the installation directory and desktop shortcut.
+3. if needed, simply delete the portable folder too.
 
-    A custom QWebEnginePage class intercepts navigation requests to avoid logging in within the app itself.
+### linux
 
-    Login requests are redirected to your system's default web browser.
+1. delete the project directory and the profile folder (`~/.ytm-lite-profiles`). that easy!
 
-    Some login elements on the site are hidden using JavaScript injection to avoid clutter.
+## for troubleshooting
 
-License
+- **Chromshitum not found**: make sure the portable Chromshitum executable is in the correct path (`oss/WindowsChromium/app/chrome.exe` for Windows, `oss/LinuxChromium/UGChrome.appimage` for Linux).
+- **uBlock not loading**: Check if the uBlock extension files are present in the `oss/` directory. if on windows, its not supported. its almost guaranteed to work for linux.
+- **any permission issues**: on linux, make sure the script has execute permissions by: `chmod +x ym_music.py`.
+- **python path**: make sure `python` or `python3` is in your PATH.
 
-this project isnt licensed, do what you want, its free, just dont do anything illegal with it :)
+## contributing
+
+feel free to fork and submit pull requests. try to make sure changes are compatible with both windows and linux!
+
+## license
+
+this project is open-source. Check the license file for details.
+
+## disclaimer
+
+this tool is for personal use. respect and follow youtube's terms of service.
